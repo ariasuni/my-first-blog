@@ -1,4 +1,9 @@
+<!doctype html>
 <html>
-    <p>Hi there!</p>
-    <p>It works!</p>
+    <h1>Le blog d’ariasuni</h1>
+    {% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <p>publié: {{ post.published_date | date:"SHORT_DATE_FORMAT" }}</p>
+    <p>{{ post.text | linebreaks }}</p>
+    {% endfor %}
 </html>
